@@ -1,0 +1,29 @@
+html, body {
+  margin: auto;
+  padding: 0;
+  background-color: #aaa;
+  color:#ffffff;
+  width:90%;
+}
+
+canvas {
+  float:left;
+  display: flex;
+}
+
+input{
+  
+}
+
+h1{
+  font-size:250%;
+}
+
+h3{
+  text-decoration:underline;
+  color:#000;
+}
+
+#MENU{
+
+}

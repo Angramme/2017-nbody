@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Gravity system</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+		 <link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body>
+		<script src="sketch.js"></script>
+		<div id="CanvasDiv"></div>
+
+		<div id="MENU">
+
+		<h1>Gravity Particle System</h1>
+
+		<h3>DATA SHEET:</h3>
+		<p id="DataSheet"></p>
+
+		<h3>TOOLS:</h3>
+		
+		<select id="tool type">
+			<option value="cam"> camera </option>
+			<option value="phy"> environment </option>
+			<option value="arm"> add/remove/modify </option>
+			<option value="ls"> load/save system </option>
+		</select>
+
+		<p> <button id="SelectPlanetButton">select</button> 
+		planet:
+		<input type="number" value="0" id="IndexInput" style="width:50px;"/>
+		</p>
+
+		<div id="camera tools">
+			<h3>CAMERA:</h3>
+
+			<button id="pauseBTN">&#8214; pause</button>
+			<button id="playBTN">&#8227; play</button>
+
+			<p>focus on:
+			<select id="CamFocusType">
+				<option value="nan"> none </option>
+				<option value="xl"> largest planet </option>
+				<option value="cent"> center </option>
+				<option value="index"> selected planet </option>
+			</select>
+			</p>
+			
+			<p>higlight all:
+			<input type="checkbox" id="HAC"/>
+			</p>
+
+			<p>show object index:
+			<input type="checkbox" id="SAOIC"/>
+			</p>
+
+			<p>highlight selected planet:
+			<input type="checkbox" checked="true" id="SSPC"/>
+			</p>
+		</div>
+
+		<div id="physics tools">
+			<h3>ENVIRONMENT:</h3>
+
+			<p>gravity strength:<br/>
+			<input type="range" min="0.1" max="2" value="0.2" step="0.1" id="GPS">
+			</p>
+
+			<p>time multiplicator:<br/>
+			<input type="range" min="1" max="100" value="1" id="TMS">
+			</p>
+
+			<p>impact mass conservation:<br/>
+			<input type="range" min="0.1" max="1" value="0.8" step="0.1" id="IMLS">
+			</p>
+			
+			<button id="ClearSceneBTN">Clear Scene</button>
+		</div>
+
+		<div id="ARM tools">
+			<h3>ADD/REMOVE/MODIFY:</h3>
+			
+			<button id="removeBTN">REMOVE</button>
+			<button id="modifyBTN">MODIFY</button>
+			<button id="refreshBTN">refresh</button>
+			<p>click to add</p>
+
+			<h3>Planet Settings:</h3>
+
+			<p>angle:
+			<input type="number" min="-180" max="180" value="0" id="ARMangle"/>
+			&deg;
+			</p>
+
+			<p>velocity:
+			<input type="number" min="0" max="100" value="0" id="ARMmagnitude" style="width:50px;"/>
+			K km/h
+			</p>
+			
+			<p>radius:
+			<input type="number" value="50" id="ARMradius" style="width:50px;"/>
+			K km
+			</p>
+		</div>
+
+		<div id="LS tools">
+			<h3>LOAD / SAVE:</h3>
+
+			<p>DOES NOT WORK!!!</p>
+
+			<input type="file" id="MYfileINPUT" style="width:150px;"/>
+			<br/>
+			<button id="SAVEbtn">SAVE</button>
+			
+			<p> file name:
+			<input type="text" value="system" id="SFname" style="width:100px"/>
+			.txt
+			</p>
+		</div>
+
+		</div>
+	</body>
+</html>
+
+
+
+
+
+
+
+
